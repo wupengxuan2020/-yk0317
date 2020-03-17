@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wpx.dao.PayMapper">
+	<select id="selects" resultType="Pay">
+		SELECT * from pay join make on pay.id=make.id 
+		<where>
+			<if test="fhzh!='' and fhzh!=null">
+				and fhzh like  concat('%',#{fhzh},'%')
+			</if>
+			
+			<if test="fkdlx!='' and fkdlx!=null">
+				and fkdlx = #{fkdlx}
+			</if>
+			
+			
+			<if test="jbr!='' and jbr!=null">
+				and jbr =#{jbr}
+			</if>
+			
+			<if test="htydd!='' and htydd!=null">
+				and htydd =#{htydd}
+			</if>
+			
+			<if test="gfdw!='' and gfdw!=null">
+				and gfdw =#{gfdw}
+			</if>
+			<if test="gkh!='' and gkh!=null">
+				and gkh =#{gkh}
+			</if>
+			<if test="zh!='' and zh!=null">
+				and zh  =#{zh}
+			</if>
+			<if test="jsbm!='' and jsbm!=null">
+				and jsbm =#{jsbm}
+			</if>
+			<if test="jsr!='' and jsr!=null">
+				and jsr =#{jsr}
+			</if>
+			<if test="fksy!='' and fksy!=null">
+				and fksy =#{fksy}
+			</if>
+			<if test="hkje!='' and hkje!=null">
+				and hkje =#{hkje}
+			</if>
+			<if test="bz!='' and bz!=null">
+				and bz =#{bz}
+			</if>
+			<if test="qklx!='' and qklx!=null">
+				and qklx =#{qklx}
+			</if>
+			<if test="f1!='' and f1!=null">
+				and fkrq &gt;#{f1}
+			</if>
+			
+			<if test="f2!='' and f2!=null">
+				and fkrq &lt;#{f2}
+			</if>
+			
+		</where>
+	</select>
+		
+	
+</mapper>
